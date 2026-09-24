@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/themify-icons@1.0.1-alpha.3/themify-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -15,7 +14,14 @@
 <body>
     <main>
         <div class="container">
-            <section class="section product">
+            <article class="section product">
+                <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                    <ol class="breadcrumbs__list">
+                        <li class="breadcrumbs__item"><a href="#">Главная</a></li>
+                        <li class="breadcrumbs__item"><a href="#">Улун</a></li>
+                        <li class="breadcrumbs__item" aria-current="page">Ананасовый улун</li>
+                    </ol>
+                </nav>
                 <h1 class="section-title">Ананасовый улун</h1>
                 <div class="product-card">
                     <div class="product-card__gallery">
@@ -61,115 +67,83 @@
 
                     <div class="product-card__content">
                         <div class="product-card__actions">
-                            <a href="#" class="product-card__review"><i class="fa fa-comment fa-fw"></i> оставить
+                            <a href="#" class="product-card__review"><i class="fa fa-comment fa-fw"
+                                    aria-hidden="true"></i> оставить
                                 отзыв</a>
-                            <a href="#" class="product-card__favorite"><i class="fa fa-heart-o"></i></a>
+                            <a href="#" class="product-card__favorite" aria-label="Добавить в избранное"><i
+                                    class="fa fa-heart-o" aria-hidden="true"></i></a>
                         </div>
-                        <ul class="product-card__prices">
-                            <li class="price-item">
+                        <div class="product-card__prices">
+
+
+                            <div class="price-item">
                                 <div class="price-item__info">
                                     <div class="price-item__meta">
-                                        <span class="price-item__weight">100 г</span>
-                                        <small class="price-item__article">арт: 01306</small>
+                                        <small class="price-item__article">арт: <span
+                                                id="current-article">01306</span></small>
                                     </div>
                                     <div class="price-item__cost">
-                                        <span class="price-item__new">349,20 <i class="fa fa-ruble"></i></span>
-                                        <span class="price-item__old">326,40 <i class="fa fa-ruble"></i></span>
+                                        <span class="price-item__new"><span id="current-price">326,40</span><i
+                                                class="fa fa-ruble" aria-hidden="true"></i></span>
+                                        <span class="price-item__old"><span id="current-old-price">349,20</span><i
+                                                class="fa fa-ruble" aria-hidden="true"></i></span>
                                     </div>
                                 </div>
                                 <div class="price-item__side">
                                     <button class="price-item__cart" type="button" aria-label="Добавить в корзину">
-                                        <i class="ti ti-shopping-cart"></i>
+                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                     </button>
                                     <div class="price-item__stock">
                                         <small>наличие:</small>
-                                        <span>Много</span>
+                                        <span id="current-stock">Много</span>
                                     </div>
                                 </div>
-
-                            </li>
-                            <li class="price-item">
-                                <div class="price-item__info">
-                                    <div class="price-item__meta">
-                                        <span class="price-item__weight">500 г</span>
-                                        <small class="price-item__article">арт: 01307</small>
-                                    </div>
-                                    <div class="price-item__cost">
-                                        <span class="price-item__new">1 432 <i class="fa fa-ruble"></i></span>
-                                        <span class="price-item__old">1 646 <i class="fa fa-ruble"></i></span>
-                                    </div>
+                            </div>
+                            <fieldset class="product-card__variants">
+                                <legend class="product-card__variants-title">Фасовка</legend>
+                                <div class="variant-options">
+                                    <label class="variant-option">
+                                        <input type="radio" name="weight" value="100" checked data-price="326,40"
+                                            data-old-price="349,20" data-article="01306" data-stock="Много">
+                                        <span>100 г</span>
+                                    </label>
+                                    <label class="variant-option">
+                                        <input type="radio" name="weight" value="500" data-price="1 432"
+                                            data-old-price="1 646" data-article="01307" data-stock="Много">
+                                        <span>500 г</span>
+                                    </label>
+                                    <label class="variant-option">
+                                        <input type="radio" name="weight" value="1000" data-price="2 064"
+                                            data-old-price="2 592" data-article="01308" data-stock="Много">
+                                        <span>1000 г</span>
+                                    </label>
+                                    <label class="variant-option">
+                                        <input type="radio" name="weight" value="5000" data-price="6 320"
+                                            data-old-price="8 710" data-article="01309" data-stock="Много">
+                                        <span>5000 г</span>
+                                    </label>
                                 </div>
-                                <div class="price-item__side">
-                                    <button class="price-item__cart" type="button" aria-label="Добавить в корзину">
-                                        <i class="ti ti-shopping-cart"></i>
-                                    </button>
-                                    <div class="price-item__stock">
-                                        <small>наличие:</small>
-                                        <span>Много</span>
-                                    </div>
-                                </div>
-
-                            </li>
-                            <li class="price-item">
-                                <div class="price-item__info">
-                                    <div class="price-item__meta">
-                                        <span class="price-item__weight">1000 г</span>
-                                        <small class="price-item__article">арт: 01308</small>
-                                    </div>
-                                    <div class="price-item__cost">
-                                        <span class="price-item__new">2 064 <i class="fa fa-ruble"></i></span>
-                                        <span class="price-item__old">2 592 <i class="fa fa-ruble"></i></span>
-                                    </div>
-                                </div>
-                                <div class="price-item__side">
-                                    <button class="price-item__cart" type="button" aria-label="Добавить в корзину">
-                                        <i class="ti ti-shopping-cart"></i>
-                                    </button>
-                                    <div class="price-item__stock">
-                                        <small>наличие:</small>
-                                        <span>Много</span>
-                                    </div>
-                                </div>
-
-                            </li>
-                            <li class="price-item">
-                                <div class="price-item__info">
-                                    <div class="price-item__meta">
-                                        <span class="price-item__weight">5000 г</span>
-                                        <small class="price-item__article">арт: 01309</small>
-                                    </div>
-                                    <div class="price-item__cost">
-                                        <span class="price-item__new">6 320 <i class="fa fa-ruble"></i></span>
-                                        <span class="price-item__old">8 710 <i class="fa fa-ruble"></i></span>
-                                    </div>
-                                </div>
-                                <div class="price-item__side">
-                                    <button class="price-item__cart" type="button" aria-label="Добавить в корзину">
-                                        <i class="ti ti-shopping-cart"></i>
-                                    </button>
-                                    <div class="price-item__stock">
-                                        <small>наличие:</small>
-                                        <span>Много</span>
-                                    </div>
-                                </div>
-
-                            </li>
-                        </ul>
+                            </fieldset>
+                        </div>
                     </div>
 
                 </div>
                 <div class="tabs">
                     <!-- Кнопки табов -->
-                    <div class="tabs__nav">
-                        <button class="tabs__btn active" data-tab="description">Описание</button>
-                        <button class="tabs__btn" data-tab="properties">Свойства</button>
-                        <button class="tabs__btn" data-tab="reviews">Отзывы</button>
+                    <div class="tabs__nav" role="tablist">
+                        <button class="tabs__btn active" data-tab="description" id="tab-description" role="tab"
+                            aria-selected="true" aria-controls="description">Описание</button>
+                        <button class="tabs__btn" data-tab="properties" id="tab-properties" role="tab"
+                            aria-selected="false" aria-controls="properties">Свойства</button>
+                        <button class="tabs__btn" data-tab="reviews" id="tab-reviews" role="tab" aria-selected="false"
+                            aria-controls="reviews">Отзывы</button>
                     </div>
 
                     <!-- Контент табов -->
                     <div class="tabs__content">
                         <!-- Описание -->
-                        <div class="tabs__panel active" id="description">
+                        <div class="tabs__panel active" id="description" role="tabpanel"
+                            aria-labelledby="tab-description" tabindex="0">
                             <p>
                                 Состав: китайский бирюзовый чай, цукаты, натуральные ароматические масла. Светлый
                                 Фуцзяньский улун с ароматом ананаса. В сухом виде — красивый крупный лист изумрудного
@@ -181,13 +155,13 @@
                                 пришёлся по вкусу этот чай, может также понравиться связанный чай «Ананасовый рай».
                             </p>
 
-                            <h3>Вкус</h3>
+                            <h2>Вкус</h2>
                             <p>
                                 Настой прозрачный, светло-янтарного цвета. Классическая нота светлого фуцзяньского улуна
                                 переплетается с яркой ананасовой нотой.
                             </p>
 
-                            <h3>Полезные свойства</h3>
+                            <h2>Полезные свойства</h2>
                             <ul>
                                 <li>отличный антиоксидант</li>
                                 <li>снижает уровень холестерина</li>
@@ -196,7 +170,8 @@
                         </div>
 
                         <!-- Свойства -->
-                        <div class="tabs__panel" id="properties">
+                        <div class="tabs__panel" id="properties" role="tabpanel" aria-labelledby="tab-properties"
+                            tabindex="0">
                             <ul class="product-props">
                                 <li><span>Воздействие:</span> Сжигает жиры</li>
                                 <li><span>Время заваривания:</span> 1-3 мин</li>
@@ -215,79 +190,82 @@
                         </div>
 
                         <!-- Отзывы -->
-                        <div class="tabs__panel" id="reviews">
+                        <div class="tabs__panel" id="reviews" role="tabpanel" aria-labelledby="tab-reviews"
+                            tabindex="0">
                             <p>Здесь будут отзывы покупателей...</p>
                         </div>
                     </div>
                 </div>
 
 
-            </section>
+            </article>
             <aside class="categories">
-                <h3 class="categories__title">КАТЕГОРИИ</h3>
+                <h2 class="categories__title" id="categories-title">КАТЕГОРИИ</h2>
 
-                <ul class="categories__list">
-                    <li class="categories__item">
-                        <a href="#" class="categories__link">
-                            Подарки
-                            <span class="categories__arrow">›</span>
-                        </a>
-                    </li>
-                    <li class="categories__item">
-                        <a href="#" class="categories__link">
-                            Матча
-                            <span class="categories__arrow">›</span>
-                        </a>
-                    </li>
-                    <li class="categories__item">
-                        <a href="#" class="categories__link">
-                            Черный чай
-                            <span class="categories__arrow">›</span>
-                        </a>
-                    </li>
-                    <li class="categories__item">
-                        <a href="#" class="categories__link">
-                            Чай зелёный с черным ароматизированный
-                            <span class="categories__arrow">›</span>
-                        </a>
-                    </li>
-                    <li class="categories__item">
-                        <a href="#" class="categories__link">
-                            Зеленый чай
-                            <span class="categories__arrow">›</span>
-                        </a>
-                    </li>
-                    <li class="categories__item">
-                        <a href="#" class="categories__link">
-                            Красный чай
-                            <span class="categories__arrow">›</span>
-                        </a>
-                    </li>
-                    <li class="categories__item">
-                        <a href="#" class="categories__link">
-                            Белый чай
-                            <span class="categories__arrow">›</span>
-                        </a>
-                    </li>
-                    <li class="categories__item">
-                        <a href="#" class="categories__link">
-                            Желтый чай
-                            <span class="categories__arrow">›</span>
-                        </a>
-                    </li>
-                    <li class="categories__item">
-                        <a href="#" class="categories__link">
-                            Улун
-                            <span class="categories__arrow">›</span>
-                        </a>
-                    </li>
-                    <li class="categories__item">
-                        <a href="#" class="categories__link">
-                            Пуэр
-                            <span class="categories__arrow">›</span>
-                        </a>
-                    </li>
-                </ul>
+                <nav aria-labelledby="categories-title">
+                    <ul class="categories__list">
+                        <li class="categories__item">
+                            <a href="#" class="categories__link">
+                                Подарки
+                                <span class="categories__arrow" aria-hidden="true">›</span>
+                            </a>
+                        </li>
+                        <li class="categories__item">
+                            <a href="#" class="categories__link">
+                                Матча
+                                <span class="categories__arrow" aria-hidden="true">›</span>
+                            </a>
+                        </li>
+                        <li class="categories__item">
+                            <a href="#" class="categories__link">
+                                Черный чай
+                                <span class="categories__arrow" aria-hidden="true">›</span>
+                            </a>
+                        </li>
+                        <li class="categories__item">
+                            <a href="#" class="categories__link">
+                                Чай зелёный с черным ароматизированный
+                                <span class="categories__arrow" aria-hidden="true">›</span>
+                            </a>
+                        </li>
+                        <li class="categories__item">
+                            <a href="#" class="categories__link">
+                                Зеленый чай
+                                <span class="categories__arrow" aria-hidden="true">›</span>
+                            </a>
+                        </li>
+                        <li class="categories__item">
+                            <a href="#" class="categories__link">
+                                Красный чай
+                                <span class="categories__arrow" aria-hidden="true">›</span>
+                            </a>
+                        </li>
+                        <li class="categories__item">
+                            <a href="#" class="categories__link">
+                                Белый чай
+                                <span class="categories__arrow" aria-hidden="true">›</span>
+                            </a>
+                        </li>
+                        <li class="categories__item">
+                            <a href="#" class="categories__link">
+                                Желтый чай
+                                <span class="categories__arrow" aria-hidden="true">›</span>
+                            </a>
+                        </li>
+                        <li class="categories__item">
+                            <a href="#" class="categories__link">
+                                Улун
+                                <span class="categories__arrow" aria-hidden="true">›</span>
+                            </a>
+                        </li>
+                        <li class="categories__item">
+                            <a href="#" class="categories__link">
+                                Пуэр
+                                <span class="categories__arrow" aria-hidden="true">›</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
 
                 <div class="categories__more">…</div>
             </aside>

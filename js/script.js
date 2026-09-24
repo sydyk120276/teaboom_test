@@ -77,20 +77,41 @@ mainImg.addEventListener("click", () => {
   );
 });
 
+// -----------------------------------------
+// Выбор фасовки
+// -----------------------------------------
+
+const weightInputs = document.querySelectorAll('input[name="weight"]');
+const priceEl = document.getElementById("current-price");
+const oldPriceEl = document.getElementById("current-old-price");
+const articleEl = document.getElementById("current-article");
+const stockEl = document.getElementById("current-stock");
+
+weightInputs.forEach((input) => {
+  input.addEventListener("change", () => {
+    priceEl.textContent = input.dataset.price;
+    oldPriceEl.textContent = input.dataset.oldPrice;
+    articleEl.textContent = input.dataset.article;
+    stockEl.textContent = input.dataset.stock;
+  });
+});
+
 document.querySelectorAll(".tabs__btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     const tabId = btn.dataset.tab;
 
     // Убираем active у всех кнопок и панелей
-    document
-      .querySelectorAll(".tabs__btn")
-      .forEach((b) => b.classList.remove("active"));
+    document.querySelectorAll(".tabs__btn").forEach((b) => {
+      b.classList.remove("active");
+      b.setAttribute("aria-selected", "false");
+    });
     document
       .querySelectorAll(".tabs__panel")
       .forEach((p) => p.classList.remove("active"));
 
     // Добавляем active текущим
     btn.classList.add("active");
+    btn.setAttribute("aria-selected", "true");
     document.getElementById(tabId).classList.add("active");
   });
 });
